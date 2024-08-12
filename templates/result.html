@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Профиль: {{name}} {{surname}}</title>
+        <meta charset="utf-8">
+        <link rel='stylesheet' href="{{url_for('static',filename='style.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='images/space.jpg')}}">
+    </head>
+    <body>
+        <div class='form_wrapper'>
+            <div class='form_container'>
+                <div class='title_container'>
+                    <h2>Профиль: {{name}} {{surname}}</h2>
+                </div>
+                <div>
+                    <form>
+                        <div class="input_field">
+                            <p>Почта: {{email}}</p>
+                        </div>
+
+                        <div class="input_field">
+                            <p>Пароль: {{password}}</p>
+                        </div>
+
+                        <div class="input_field">
+                            <p>Пол: {{gender}}</p>
+                        </div>
+
+                        <div class="input_field">
+                            <p>Выбраный курс: {{courses}}</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>

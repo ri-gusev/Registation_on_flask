@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{{url_for('static',filename='style.css')}}" rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='images/space.jpg')}}">
+    <title>Работа с формой </title>
+</head>
+
+<body>
+    <div class='form_wrapper'>
+        <div class='form_container'>
+            <div class='title_container'>
+                <h2>Регистрация на курс </h2>
+            </div>
+
+            <div>
+                <form action="{{url_for('index')}}" method="POST">
+                    <div class='input_field'> <span><i class='fa fa-envelope'></i></span>
+                        <input type='email' name="email" placeholder="Введите почту" required>
+                    </div>
+                    <div class='input_field'> <span><i class='fa fa-lock'></i></span>
+                        <input type='password' name="password" placeholder="Введите пароль" required>
+                    </div>
+                    <div class='input_field'> <span><i class='fa fa-lock'></i></span>
+                        <input type='password' name="password" placeholder="Введите пароль еще раз" required>
+                    </div>
+                    <div class='input_field'> <span><i class='fa fa-user'></i></span>
+                        <input type='text' name="name" placeholder="Введите имя">
+                    </div>
+                    <div class='input_field'> <span><i class='fa fa-user'></i></span>
+                        <input type='text' name="surname" placeholder="Введите фамилию">
+                    </div>
+            </div>
+        </div>
+        <div class='input_field radio_option'>
+            <input type='radio' name='options' id='rd1' value="Мужской">
+            <label for='rd1'>Мужской</label>
+            <input type='radio' name='options' id='rd2' value="Женский">
+            <label for='rd2'>Женский</label>
+        </div>
+        <div class='input_field select_option'>
+            <select name='courses'>
+                <option> Выбери курс </option>
+                {% for course in courses %}
+                <option value={{course}}> {{course}} </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class='input_field checkbox_option'>
+            <input type='checkbox' name='agree' id='cb1' required>
+            <label for='cb1'>Я <a href='https://rosstat.gov.ru/politika-konfidencialnosti'>прочитал</a> и согласен с политикой обработки персональных данных.</label>
+        </div>
+        <input class='button' type='submit' value='Отправить'>
+        </form>
+</body>
+
+</html>
